@@ -109,7 +109,7 @@ export async function displayNative(image, exposureEV, container) {
     element.style.setProperty('dynamic-range-limit', 'no-limit');
     const url = URL.createObjectURL(item.blob);
     element.src = url;
-    const result = { name: item.name, bytes: item.blob.size, decoded: false, element };
+    const result = { note: item.note, name: item.name, bytes: item.blob.size, decoded: false, element };
     try {
       await element.decode();
       result.decoded = true;
@@ -124,7 +124,7 @@ export async function displayNative(image, exposureEV, container) {
     label.textContent = `${item.name} · ${item.blob.size} bytes`;
     const status = document.createElement('p');
     status.textContent = result.decoded
-      ? 'Native decode succeeded. HDR display output requires separate verification.'
+      ? `Native decode succeeded. HDR display output requires separate verification. ${item.note ?? ''}`
       : `Decode failed: ${result.error}`;
     card.append(label, status, element);
     container.append(card);
