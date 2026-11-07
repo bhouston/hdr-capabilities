@@ -1,0 +1,4 @@
+minimumReleaseAgeExclude:
+  - hdrify@1.4.0
+allowBuilds:
+  esbuild: true

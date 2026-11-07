@@ -1,0 +1,22 @@
+{
+  "name": "hdr-capabilities",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs",
+    "test:safari": "node scripts/test-safari.mjs"
+  },
+  "dependencies": {
+    "hdrify": "1.4.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.27.3",
+    "playwright": "1.65.0"
+  },
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=26"
+  }
+}
